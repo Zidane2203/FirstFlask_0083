@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask - Method POST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <main>
+    <main class="kartu">
         <h1>Parsing Parameter dengan Method POST</h1>
 
         <form action="{{ url_for('proses') }}" method="post">
@@ -15,7 +16,9 @@
             <button type="submit">Kirim</button>
         </form>
 
-        <label id="hasil">{{ pesan if pesan else "Hasil akan tampil di sini." }}</label>
+        <label id="hasil" class="hasil {% if pesan %}{{ 'sukses' if sukses else 'gagal' }}{% endif %}">
+            {{ pesan if pesan else "Hasil akan tampil di sini." }}
+        </label>
     </main>
 </body>
 </html>
