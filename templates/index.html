@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask - Method POST</title>
+</head>
+<body>
+    <main>
+        <h1>Parsing Parameter dengan Method POST</h1>
+
+        <form action="{{ url_for('proses') }}" method="post">
+            <label for="nama">Nama Anda</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama" value="{{ nama }}" required>
+            <button type="submit">Kirim</button>
+        </form>
+
+        <label id="hasil">{{ pesan if pesan else "Hasil akan tampil di sini." }}</label>
+    </main>
+</body>
+</html>
